@@ -104,7 +104,7 @@ export default new Vuex.Store({
         commit('storeUser')
         return
       }
-      axios.post('https://mythic-hulling-228022.firebaseio.com/users.json' + '?auth=' + state.idToken, userData)
+      axios.post('' + '?auth=' + state.idToken, userData)
         .then(res => console.log(res))
         .catch(error => console.log(error))
     },
@@ -112,7 +112,7 @@ export default new Vuex.Store({
       if (!state.idToken) {
         return
       }
-      axios.get('https://mythic-hulling-228022.firebaseio.com/users.json' + '?auth=' + state.idToken)
+      axios.get('' + '?auth=' + state.idToken)
         .then(res => {
           console.log(res)
           const data = res.data
