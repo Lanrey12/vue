@@ -31,7 +31,7 @@ export default new Vuex.Store({
       }, expirationTime * 1000)
     },
     signup ({commit, dispatch}, authData) {
-      axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDot6dlMipSiCiD4pWA4A4aAgEI6Z_DnII', {
+      axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?', {
         email: authData.email,
         password: authData.password,
         returnSecureToken: true
@@ -54,7 +54,7 @@ export default new Vuex.Store({
         .catch(error => console.log(error))
     },
     login ({commit, dispatch}, authData) {
-      axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDot6dlMipSiCiD4pWA4A4aAgEI6Z_DnII', {
+      axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?', {
         email: authData.email,
         password: authData.password,
         returnSecureToken: true
